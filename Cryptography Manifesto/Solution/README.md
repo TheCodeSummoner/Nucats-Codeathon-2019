@@ -12,7 +12,7 @@ To obtain the solution, follow the steps:
 
 ### Extras
 
-1. https://www.dcode.fr/book-cipher features *Book Cipher* tool.
+1. https://www.dcode.fr/book-cipher can be used to decrypt the message.
 
 ### Author
 
