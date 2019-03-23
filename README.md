@@ -4,7 +4,7 @@
 
 Repository of CTF-challenges created during the *NUCATS Codeathon 2019* at Newcastle University.
 
-Each challenge is further describe within its corresponding directory.
+Each challenge is further described within its corresponding directory.
 
 ### Author
 
