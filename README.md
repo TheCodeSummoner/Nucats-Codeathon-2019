@@ -8,7 +8,7 @@ Each challenge is further described within its corresponding directory, as well 
 
 ### Challenges
 
-The challenges are mainly focused on *Cryptography* and *Forensics*, however general knowledge still applies. Some useful ideas to know about are *recursion*, file compression*, *substitution ciphers*, *dictionary ciphers*, *music theory*, *steganography*, *image processing*, and, naturally, *programming*.
+The challenges are mainly focused on *Cryptography* and *Forensics*, however general knowledge still applies. Some useful ideas to know about are *recursion*, *file compression*, *substitution ciphers*, *dictionary ciphers*, *music theory*, *steganography*, *image processing*, and, naturally, *programming*.
 
 ### Author
 
