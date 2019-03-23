@@ -4,19 +4,23 @@
 
 To obtain the solution, follow the steps:
 
-1. Recursively extract zipped folder.
+1. Find a hidden `RAR` in the image.
 
-2. Recursively decrypt the text file using *base64* and *binary* formats.
+2. Extract the `RAR` from the image (hex values between `Rar` and `pAD`).
 
-3. Find the flag (where *300 Spartans* takes place) -> *Thermopylae*
+3. Reconstruct the image to learn the password to the rar file.
+
+4. Extract *flag.txt* from the archive.
+
+5. Find the flag (band with *link* in their name) -> *Linkinpark*
 
 ### Extras
 
-1. *encryptor.py* was used to encrypt a string message into multiple layers of *binary* and *base64*.
+1. *flag.txt* is the file with the band.
 
-2. *compressor.py* was used to zip a file multiple times.
+2. *flag.rar* is the archive.
 
-3. *recursive_madness_level_2.txt* is the unzipped, encrypted file.
+3. *valentinepark.png* is the original image (with the password).
 
 ### Author
 
