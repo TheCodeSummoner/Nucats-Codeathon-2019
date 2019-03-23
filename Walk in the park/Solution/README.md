@@ -4,7 +4,7 @@
 
 To obtain the solution, follow the steps:
 
-1. Find a hidden `RAR` in the image.
+1. Find a hidden `RAR` in the image (can use *binwalk*).
 
 2. Extract the `RAR` from the image (hex values between `Rar` and `pAD`).
 
