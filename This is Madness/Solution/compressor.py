@@ -1,12 +1,12 @@
 from random import randint
 from zipfile import ZipFile
-from os import remove
+from os import remove, path
 
 
 def next_zip(filename: str) -> str:
 
     # Create a new, random name
-    name = str(randint(10000, 99999)) + ".zip"
+    name = path.join("..", str(randint(10000, 99999)) + ".zip")
 
     # Open a new zip file and write to it
     with ZipFile(name, mode="w") as zf:
@@ -35,4 +35,4 @@ def zip_recursively(filename: str, depth: int):
 
 
 if __name__ == '__main__':
-    zip_recursively("recursive_madness_level_2.txt", 100)
+    zip_recursively(path.join("..", "recursive_madness_level_2.txt"), 100)

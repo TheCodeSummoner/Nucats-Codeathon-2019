@@ -1,4 +1,5 @@
 from binascii import b2a_base64 as b64
+from os import path
 
 
 def next_bin(text: str) -> str:
@@ -41,5 +42,5 @@ if __name__ == "__main__":
 
     flag = "THIS! IS! FLAG! Actually, the flag is where the battle took place"
 
-    with open("recursive_madness_level_2.txt", "w") as f:
+    with open(path.join("..", "recursive_madness_level_2.txt"), "w") as f:
         f.write(encrypt_recursively(flag, 6))
