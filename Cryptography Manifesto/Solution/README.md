@@ -6,7 +6,7 @@ To obtain the solution, follow the steps:
 
 1. Find the *Hacker Manifesto* (available at http://www.phrack.org/issues/7/3.html)
 
-2. Use *Book Cipher* to with the manifesto as the key to decrypt the message
+2. Use *Book Cipher* with the manifesto as the key to decrypt the message
 
 3. Find the flag (author of the manifesto) -> *Loyd Blankenship*
 
