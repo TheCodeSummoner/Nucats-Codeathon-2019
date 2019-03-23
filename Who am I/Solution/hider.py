@@ -3,22 +3,34 @@ from PIL import Image
 from os import remove, path
 
 
-def convert_to_black_white(filename: str, path: str):
+def convert_to_black_white(file_path: str, output_path: str):
+    """
+    This function is used to convert an image to binary-like values (full black/white)
+
+    :param file_path: Path to the file to convert
+    :param output_path: Path to the output location
+    """
 
     # Read the image
-    img = cv2.imread(filename)
+    img = cv2.imread(file_path)
 
     # Threshold the image
     thresh = cv2.threshold(cv2.cvtColor(img, cv2.COLOR_BGR2GRAY), 0, 255, cv2.THRESH_BINARY | cv2.THRESH_OTSU)[1]
 
     # Save the image
-    cv2.imwrite(path, thresh)
+    cv2.imwrite(output_path, thresh)
 
 
-def convert_to_binary(filename: str) -> str:
+def convert_to_binary(file_path: str) -> str:
+    """
+    This function is used to convert a file into a binary string representing it.
+
+    :param file_path: Path to the file to convert
+    :return: Binary representation of the file
+    """
 
     # Convert the picture to black and white
-    convert_to_black_white(filename, "temp.png")
+    convert_to_black_white(file_path, "temp.png")
 
     # Initialise the string to return
     binary = ""
@@ -39,12 +51,18 @@ def convert_to_binary(filename: str) -> str:
     return binary
 
 
-def hide_bits(path:str, binary: str):
+def hide_bits(file_path: str, binary: str):
+    """
+    This function is used to hide the binary string representation of an image into a new gradient-like image
+
+    :param file_path: Path to the output location
+    :param binary: Binary representation of an image
+    """
 
     # Create a new image of expected size
     img = Image.new("RGBA", (128, 128))
 
-    # Load pixel map
+    # Load the pixel map
     pixels = img.load()
 
     # Iterate over the map and set each pixel to create a gradient
@@ -53,9 +71,10 @@ def hide_bits(path:str, binary: str):
             pixels[i, j] = (i, j, 100, 255 - int(binary[i*128 + j]))
 
     # Save the image
-    img.save(path)
+    img.save(file_path)
 
 
 if __name__ == '__main__':
-    img_path = path.join("..", "who_am_i.png")
-    hide_bits(img_path, convert_to_binary("pikachu.png"))
+
+    # Hide the original image into a gradient image
+    hide_bits(path.join("..", "who_am_i.png"), convert_to_binary("pikachu.png"))

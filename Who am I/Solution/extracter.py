@@ -4,13 +4,18 @@ from PIL import Image
 from os import path
 
 
-def extract_original(filename: str):
+def extract_original(file_path: str):
+    """
+    This function is used to show the hidden file in the given image.
+
+    :param file_path: Path to the file to extract hidden information from
+    """
 
     # Initialise a new list of final pixels
     final_pixels = []
 
     # Extract the pixel values
-    for pixels in Image.open(filename).getdata():
+    for pixels in Image.open(file_path).getdata():
         if pixels[3] == 255:
             final_pixels.append(0)
         else:
@@ -30,5 +35,6 @@ def extract_original(filename: str):
 
 
 if __name__ == '__main__':
-    img_path = path.join("..", "who_am_i.png")
-    extract_original(img_path)
+
+    # Show the solution to the challenge
+    extract_original(path.join("..", "who_am_i.png"))

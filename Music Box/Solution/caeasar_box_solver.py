@@ -1,17 +1,17 @@
 def decrypt(encrypted: str, side: int) -> str:
+    """
+    This function is used to decrypt a Caeasar Box encrypted message.
 
-    # Initialise the string to build over time
-    decrypted = ""
+    :param encrypted: Encrypted message
+    :param side: Size of the box (side of the square)
+    :return: Decrypted message
+    """
 
-    # Iterate over columns
-    for i in range(side):
-
-        # Build up each part of the string
-        decrypted += "".join(char for char in encrypted[i::side])
-
-    # Return the decrypted string
-    return decrypted
+    # Decrypt the string by using the standard decryption approach (read columns)
+    return "".join("".join(char for char in encrypted[i::side]) for i in range(side))
 
 
 if __name__ == '__main__':
+
+    # Print the decrypted string for this challenge
     print(decrypt("IICEMCSORFAANELMWQDAEIUIG", 5))
